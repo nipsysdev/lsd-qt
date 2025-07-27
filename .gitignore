@@ -1,0 +1,81 @@
+# Qt/QML specific
+*.qmlc
+*.jsc
+*.qrc.cpp
+*.qrc.depends
+*.moc
+*.moc.cpp
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+*.pdb
+*.ilk
+*.exp
+*.qm
+*.ts~
+
+# Qt Creator
+*.user
+*.user.*
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+CMakeLists.txt.user*
+
+# Build directories
+build/
+build-*/
+debug/
+release/
+Debug/
+Release/
+.qmake.stash
+Makefile*
+!Makefile.am
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+*.orig
+
+# Node.js (in case we add any tooling later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (build scripts, etc)
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+env/
+venv/
+
+# Backup files
+*~
+*.backup
