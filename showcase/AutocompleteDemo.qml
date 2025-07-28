@@ -19,9 +19,9 @@ Column {
     
     Column {
         width: parent.width
-        spacing: Theme.LsdTheme.spacing[3] // 24px
+        spacing: Theme.LsdTheme.spacing[4] // 32px
         
-        // Basic autocomplete
+        // Basic usage
         Column {
             spacing: Theme.LsdTheme.spacing[2] // 16px
             
@@ -30,29 +30,16 @@ Column {
                 variant: "h3"
             }
             
-            Row {
-                spacing: Theme.LsdTheme.spacing[4] // 32px
-                
-                Lsd.LsdAutocomplete {
-                    width: 250
-                    label: "Search Countries"
-                    options: [
-                        "United States", "Canada", "United Kingdom", "Australia",
-                        "Germany", "France", "Italy", "Spain", "Japan", "China",
-                        "India", "Brazil", "Mexico", "Argentina", "Netherlands"
-                    ]
-                    onOptionSelected: console.log("Selected country:", option)
-                }
-                
-                Lsd.LsdAutocomplete {
-                    width: 250
-                    label: "Programming Languages"
-                    options: [
-                        "JavaScript", "Python", "Java", "C++", "C#", "Go",
-                        "Rust", "TypeScript", "Swift", "Kotlin", "PHP", "Ruby"
-                    ]
-                    onOptionSelected: console.log("Selected language:", option)
-                }
+            Lsd.LsdAutocomplete {
+                width: 280
+                label: "Search Countries"
+                placeholderText: "Start typing..."
+                options: [
+                    "United States", "Canada", "United Kingdom", "Australia",
+                    "Germany", "France", "Italy", "Spain", "Japan", "China",
+                    "India", "Brazil", "Mexico", "Argentina", "Netherlands"
+                ]
+                onOptionSelected: console.log("Selected:", option)
             }
         }
         
@@ -68,44 +55,18 @@ Column {
             Row {
                 spacing: Theme.LsdTheme.spacing[4] // 32px
                 
-                Column {
-                    spacing: Theme.LsdTheme.spacing[1] // 8px
-                    
-                    Lsd.LsdText {
-                        text: "Outlined (default)"
-                        variant: "body3"
-                        colorVariant: "tertiary"
-                    }
-                    
-                    Lsd.LsdAutocomplete {
-                        width: 200
-                        label: "City"
-                        variant: "outlined"
-                        options: [
-                            "New York", "Los Angeles", "Chicago", "Houston", "Phoenix",
-                            "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose"
-                        ]
-                    }
+                Lsd.LsdAutocomplete {
+                    width: 200
+                    label: "Outlined"
+                    variant: "outlined"
+                    options: ["React", "Vue", "Angular", "Svelte"]
                 }
                 
-                Column {
-                    spacing: Theme.LsdTheme.spacing[1] // 8px
-                    
-                    Lsd.LsdText {
-                        text: "Underlined"
-                        variant: "body3"
-                        colorVariant: "tertiary"
-                    }
-                    
-                    Lsd.LsdAutocomplete {
-                        width: 200
-                        label: "Technology"
-                        variant: "underlined"
-                        options: [
-                            "React", "Vue", "Angular", "Svelte", "Next.js",
-                            "Nuxt.js", "Express", "Django", "Flask", "Spring"
-                        ]
-                    }
+                Lsd.LsdAutocomplete {
+                    width: 200
+                    label: "Underlined"
+                    variant: "underlined"
+                    options: ["JavaScript", "TypeScript", "Python", "Go"]
                 }
             }
         }
@@ -120,37 +81,37 @@ Column {
             }
             
             Row {
-                spacing: Theme.LsdTheme.spacing[4] // 32px
+                spacing: Theme.LsdTheme.spacing[3] // 24px
                 
                 Lsd.LsdAutocomplete {
                     width: 150
                     label: "Small"
                     size: "small"
-                    options: ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
+                    options: ["Apple", "Banana", "Cherry"]
                 }
                 
                 Lsd.LsdAutocomplete {
                     width: 170
                     label: "Medium"
                     size: "medium"
-                    options: ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
+                    options: ["Apple", "Banana", "Cherry"]
                 }
                 
                 Lsd.LsdAutocomplete {
                     width: 190
                     label: "Large"
                     size: "large"
-                    options: ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
+                    options: ["Apple", "Banana", "Cherry"]
                 }
             }
         }
         
-        // Custom filtering
+        // States & configuration
         Column {
             spacing: Theme.LsdTheme.spacing[2] // 16px
             
             Lsd.LsdText {
-                text: "Custom Options"
+                text: "States & Options"
                 variant: "h3"
             }
             
@@ -158,130 +119,27 @@ Column {
                 spacing: Theme.LsdTheme.spacing[4] // 32px
                 
                 Lsd.LsdAutocomplete {
-                    width: 200
-                    label: "Min 2 chars"
-                    options: [
-                        "Adobe", "Amazon", "Apple", "Facebook", "Google",
-                        "Microsoft", "Netflix", "Spotify", "Tesla", "Twitter"
-                    ]
-                }
-                
-                Lsd.LsdAutocomplete {
-                    width: 200
-                    label: "Max 5 results"
-                    maxResults: 5
-                    options: [
-                        "JavaScript", "Python", "Java", "C++", "C#", "Go",
-                        "Rust", "TypeScript", "Swift", "Kotlin", "PHP", "Ruby",
-                        "Scala", "Clojure", "Haskell", "Erlang", "Elixir"
-                    ]
-                }
-            }
-        }
-        
-        // States
-        Column {
-            spacing: Theme.LsdTheme.spacing[2] // 16px
-            
-            Lsd.LsdText {
-                text: "States"
-                variant: "h3"
-            }
-            
-            Row {
-                spacing: Theme.LsdTheme.spacing[4] // 32px
-                
-                Lsd.LsdAutocomplete {
-                    width: 200
+                    width: 180
                     label: "Error State"
                     error: true
                     options: ["Option 1", "Option 2", "Option 3"]
                 }
                 
                 Lsd.LsdAutocomplete {
-                    width: 200
+                    width: 180
                     label: "Disabled"
                     disabled: true
                     options: ["Option 1", "Option 2", "Option 3"]
                 }
-            }
-        }
-        
-        // Job search example
-        Column {
-            spacing: Theme.LsdTheme.spacing[2] // 16px
-            
-            Lsd.LsdText {
-                text: "Job Search Form"
-                variant: "h3"
-            }
-            
-            Lsd.LsdCard {
-                width: 600
-                height: 280
                 
-                Column {
-                    spacing: Theme.LsdTheme.spacing[2] // 16px
-                    width: parent.width
-                    
-                    Lsd.LsdText {
-                        text: "Find Your Next Role"
-                        variant: "body1"
-                    }
-                    
-                    Row {
-                        spacing: Theme.LsdTheme.spacing[2] // 16px
-                        width: parent.width
-                        
-                        Lsd.LsdAutocomplete {
-                            width: 200
-                            label: "Job Title"
-                            options: [
-                                "Software Engineer", "Frontend Developer", "Backend Developer",
-                                "Full Stack Developer", "DevOps Engineer", "Data Scientist",
-                                "Product Manager", "UI/UX Designer", "QA Engineer"
-                            ]
-                        }
-                        
-                        Lsd.LsdAutocomplete {
-                            width: 200
-                            label: "Location"
-                            options: [
-                                "San Francisco, CA", "New York, NY", "Seattle, WA",
-                                "Austin, TX", "Boston, MA", "Los Angeles, CA",
-                                "Chicago, IL", "Denver, CO", "Remote"
-                            ]
-                        }
-                    }
-                    
-                    Row {
-                        spacing: Theme.LsdTheme.spacing[2] // 16px
-                        width: parent.width
-                        
-                        Lsd.LsdAutocomplete {
-                            width: 200
-                            label: "Company Size"
-                            options: [
-                                "Startup (1-50)", "Small (51-200)", "Medium (201-1000)",
-                                "Large (1001-5000)", "Enterprise (5000+)"
-                            ]
-                        }
-                        
-                        Lsd.LsdAutocomplete {
-                            width: 200
-                            label: "Skills"
-                            options: [
-                                "React", "Vue.js", "Angular", "Node.js", "Python",
-                                "Java", "AWS", "Docker", "Kubernetes", "PostgreSQL"
-                            ]
-                        }
-                    }
-                    
-                    Lsd.LsdButton {
-                        text: "Search Jobs"
-                        variant: "filled"
-                        onClicked: console.log("Searching jobs...")
-                    }
+                Lsd.LsdAutocomplete {
+                    width: 180
+                    label: "Max 3 Results"
+                    maxResults: 3
+                    options: [
+                        "JavaScript", "Python", "Java", "C++", "C#", "Go",
+                        "Rust", "TypeScript", "Swift", "Kotlin"
+                    ]
                 }
             }
         }

@@ -19,9 +19,9 @@ Column {
     
     Column {
         width: parent.width
-        spacing: Theme.LsdTheme.spacing[3] // 24px
+        spacing: Theme.LsdTheme.spacing[4] // 32px
         
-        // Basic breadcrumbs
+        // Basic usage
         Column {
             spacing: Theme.LsdTheme.spacing[2] // 16px
             
@@ -30,120 +30,56 @@ Column {
                 variant: "h3"
             }
             
+            Lsd.LsdBreadcrumb {
+                width: parent.width
+                items: [
+                    {text: "Home", value: "home"},
+                    {text: "Products", value: "products"},
+                    {text: "Electronics", value: "electronics"},
+                    {text: "Laptops", value: "laptops"}
+                ]
+                onItemClicked: console.log("Navigate to:", value, text)
+            }
+        }
+        
+        // Different path lengths
+        Column {
+            spacing: Theme.LsdTheme.spacing[2] // 16px
+            
+            Lsd.LsdText {
+                text: "Different Lengths"
+                variant: "h3"
+            }
+            
             Column {
                 spacing: Theme.LsdTheme.spacing[1] // 8px
-                
-                Lsd.LsdBreadcrumb {
-                    width: parent.width
-                    items: [
-                        {text: "Home", value: "home"},
-                        {text: "Products", value: "products"},
-                        {text: "Electronics", value: "electronics"},
-                        {text: "Laptops", value: "laptops"}
-                    ]
-                    onItemClicked: console.log("Breadcrumb clicked:", value, text)
-                }
                 
                 Lsd.LsdBreadcrumb {
                     width: parent.width
                     items: [
                         {text: "Dashboard", value: "dashboard"},
-                        {text: "Users", value: "users"},
-                        {text: "Profile", value: "profile"}
+                        {text: "Settings", value: "settings"}
                     ]
-                    onItemClicked: console.log("Navigate to:", value)
                 }
-            }
-        }
-        
-        // Different separators
-        Column {
-            spacing: Theme.LsdTheme.spacing[2] // 16px
-            
-            Lsd.LsdText {
-                text: "Separators"
-                variant: "h3"
-            }
-            
-            Column {
-                spacing: Theme.LsdTheme.spacing[1] // 8px
                 
                 Lsd.LsdBreadcrumb {
                     width: parent.width
                     items: [
-                        {text: "Documentation", value: "docs"},
+                        {text: "Docs", value: "docs"},
                         {text: "Components", value: "components"},
-                        {text: "Navigation", value: "navigation"}
-                    ]
-                }
-                
-                Lsd.LsdBreadcrumb {
-                    width: parent.width
-                    items: [
-                        {text: "Admin", value: "admin"},
-                        {text: "Settings", value: "settings"},
-                        {text: "Security", value: "security"}
-                    ]
-                }
-                
-                Lsd.LsdBreadcrumb {
-                    width: parent.width
-                    items: [
-                        {text: "Projects", value: "projects"},
-                        {text: "Web App", value: "webapp"},
-                        {text: "Frontend", value: "frontend"}
+                        {text: "Navigation", value: "navigation"},
+                        {text: "Breadcrumb", value: "breadcrumb"}
                     ]
                 }
             }
         }
         
-        // Breadcrumb sizes
+        // Long paths with ellipsis
         Column {
             spacing: Theme.LsdTheme.spacing[2] // 16px
             
             Lsd.LsdText {
-                text: "Sizes"
-                variant: "h3"
-            }
-            
-            Column {
-                spacing: Theme.LsdTheme.spacing[1] // 8px
-                
-                Lsd.LsdBreadcrumb {
-                    width: parent.width
-                    items: [
-                        {text: "Home", value: "home"},
-                        {text: "Blog", value: "blog"},
-                        {text: "Article", value: "article"}
-                    ]
-                }
-                
-                Lsd.LsdBreadcrumb {
-                    width: parent.width
-                    items: [
-                        {text: "Store", value: "store"},
-                        {text: "Category", value: "category"},
-                        {text: "Product", value: "product"}
-                    ]
-                }
-                
-                Lsd.LsdBreadcrumb {
-                    width: parent.width
-                    items: [
-                        {text: "Platform", value: "platform"},
-                        {text: "Services", value: "services"},
-                        {text: "API", value: "api"}
-                    ]
-                }
-            }
-        }
-        
-        // Breadcrumb with ellipsis (long paths)
-        Column {
-            spacing: Theme.LsdTheme.spacing[2] // 16px
-            
-            Lsd.LsdText {
-                text: "Long Paths with Ellipsis"
+                text: "Ellipsis for Long Paths"
                 variant: "h3"
             }
             
@@ -159,54 +95,21 @@ Column {
                         {text: "Projects", value: "projects"},
                         {text: "Web Development", value: "webdev"},
                         {text: "React Apps", value: "react"},
-                        {text: "E-commerce", value: "ecommerce"},
                         {text: "Components", value: "components"},
                         {text: "Navigation", value: "nav"}
                     ]
-                    onItemClicked: console.log("Navigate to:", value)
                 }
                 
                 Lsd.LsdBreadcrumb {
-                    width: 300
+                    width: 350
                     maxItems: 3
                     items: [
                         {text: "Company", value: "company"},
-                        {text: "Departments", value: "departments"},
                         {text: "Engineering", value: "engineering"},
-                        {text: "Frontend Team", value: "frontend"},
+                        {text: "Frontend", value: "frontend"},
                         {text: "Projects", value: "projects"},
-                        {text: "Current Sprint", value: "sprint"}
+                        {text: "Current", value: "current"}
                     ]
-                }
-            }
-        }
-        
-        // Interactive states
-        Column {
-            spacing: Theme.LsdTheme.spacing[2] // 16px
-            
-            Lsd.LsdText {
-                text: "Interactive States"
-                variant: "h3"
-            }
-            
-            Column {
-                spacing: Theme.LsdTheme.spacing[1] // 8px
-                
-                Lsd.LsdBreadcrumb {
-                    width: parent.width
-                    items: [
-                        {text: "Dashboard", value: "dashboard", clickable: true},
-                        {text: "Reports", value: "reports", clickable: true},
-                        {text: "Monthly", value: "monthly", clickable: false}
-                    ]
-                    onItemClicked: console.log("Clicked:", value)
-                }
-                
-                Lsd.LsdText {
-                    text: "The last item is typically not clickable (current page)"
-                    variant: "body3"
-                    colorVariant: "tertiary"
                 }
             }
         }
