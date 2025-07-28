@@ -1,2 +1,2 @@
 #!/bin/bash
-qml demo/main.qml
+qml showcase/main.qml
