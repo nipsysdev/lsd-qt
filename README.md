@@ -6,6 +6,8 @@ QML component library implementing the Logos Design System for Qt applications.
 
 Minimal, content-focused design system challenging conventional UI clutter. Pure black/white aesthetic with clean typography and intentional spacing.
 
+> **Note**: This is a Qt/QML implementation of the [Logos Design System](https://github.com/acid-info/lsd). For React components, check out the main LSD repository.
+
 ## Quick Start
 
 ```qml
@@ -17,13 +19,6 @@ Lsd.LsdButton {
     onClicked: console.log("clicked")
 }
 ```
-
-## Components
-
-- `LsdButton` - Primary/secondary buttons with hover states
-- `LsdText` - Typography with proper hierarchy
-- `LsdTextField` - Input fields
-- `LsdCard` - Content containers
 
 ## Theme Support
 
