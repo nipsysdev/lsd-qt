@@ -1,44 +1,19 @@
-# LSD Design Tokens
+# Design Tokens
 
 ## Colors
 
-```
-Light Theme:
-- surfacePrimary: #ffffff
-- surfaceSecondary: #000000
-- textPrimary: #000000
-- textSecondary: #ffffff
-- borderPrimary: #000000
-- textTertiary: rgba(0,0,0,0.34)
+Light: white bg, black text/borders
+Dark: black bg, white text/borders  
+Tertiary text: 34% opacity
 
-Dark Theme: (invert primary/secondary)
-- surfacePrimary: #000000
-- surfaceSecondary: #ffffff
-- textPrimary: #ffffff
-- textSecondary: #000000
-- borderPrimary: #ffffff
-```
+## Typography
 
-## Typography Scale
-
-```
-h1: 40px (2.5rem)
-h2: 32px (2rem)
-h3: 28px (1.75rem)
-body1: 16px (1rem)
-body2: 14px (0.875rem)
-body3: 12px (0.75rem)
-label: 14px (0.875rem)
-```
+h1(40px) h2(32px) h3(28px) body1(16px) body2(14px) body3(12px) label(14px)
 
 ## Spacing
 
-`[4, 8, 16, 24, 32, 40, 64, 80, 96, 120]px`
+[4, 8, 16, 24, 32, 40, 64, 80, 96, 120]px
 
-## Component Patterns
+## Pattern
 
-- All borders: `1px solid borderPrimary`
-- Hover: text underline, pointer cursor
-- Font family: sans-serif, normal weight
-- Button padding: small(24px), medium(48px), large(80px)
-- Component heights: small(28px), medium(32px), large(40px)
+1px solid borders, hover underlines, no animations
