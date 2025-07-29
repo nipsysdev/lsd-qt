@@ -19,14 +19,14 @@ Column {
     
     Column {
         width: parent.width
-        spacing: Theme.LsdTheme.spacing[3] // 24px
+        spacing: Theme.LsdTheme.spacing[4] // 32px
         
-        // Basic checkboxes
+        // Basic usage
         Column {
             spacing: Theme.LsdTheme.spacing[2] // 16px
             
             Lsd.LsdText {
-                text: "Basic"
+                text: "Basic Usage"
                 variant: "h3"
             }
             
@@ -35,34 +35,26 @@ Column {
                 
                 Lsd.LsdCheckbox {
                     text: "Default checkbox"
-                    onToggled: console.log("Default checkbox:", checked)
                 }
                 
                 Lsd.LsdCheckbox {
                     text: "Pre-checked"
                     checked: true
-                    onToggled: console.log("Pre-checked:", checked)
                 }
                 
                 Lsd.LsdCheckbox {
-                    text: "Disabled"
-                    disabled: true
-                }
-                
-                Lsd.LsdCheckbox {
-                    text: "Disabled checked"
-                    checked: true
-                    disabled: true
+                    text: "Indeterminate state"
+                    indeterminate: true
                 }
             }
         }
         
-        // Checkbox sizes
+        // Size variants
         Column {
             spacing: Theme.LsdTheme.spacing[2] // 16px
             
             Lsd.LsdText {
-                text: "Sizes"
+                text: "Size Variants"
                 variant: "h3"
             }
             
@@ -75,56 +67,42 @@ Column {
                 }
                 
                 Lsd.LsdCheckbox {
-                    text: "Medium checkbox (default)"
+                    text: "Medium checkbox"
                     size: "medium"
                 }
                 
                 Lsd.LsdCheckbox {
-                    text: "Large checkbox"
+                    text: "Large checkbox (default)"
                     size: "large"
                 }
             }
         }
         
-        // Form example
+        // States
         Column {
             spacing: Theme.LsdTheme.spacing[2] // 16px
             
             Lsd.LsdText {
-                text: "Form Example"
+                text: "States"
                 variant: "h3"
             }
             
-            Lsd.LsdCard {
-                width: 400
-                height: 200
+            Column {
+                spacing: Theme.LsdTheme.spacing[1] // 8px
                 
-                Column {
-                    spacing: Theme.LsdTheme.spacing[2] // 16px
-                    width: parent.width
-                    
-                    Lsd.LsdText {
-                        text: "Account Settings"
-                        variant: "body1"
-                    }
-                    
-                    Lsd.LsdCheckbox {
-                        text: "Email notifications"
-                        checked: true
-                    }
-                    
-                    Lsd.LsdCheckbox {
-                        text: "SMS notifications"
-                    }
-                    
-                    Lsd.LsdCheckbox {
-                        text: "Marketing emails"
-                    }
-                    
-                    Lsd.LsdCheckbox {
-                        text: "Weekly digest"
-                        checked: true
-                    }
+                Lsd.LsdCheckbox {
+                    text: "Enabled checkbox"
+                }
+                
+                Lsd.LsdCheckbox {
+                    text: "Disabled unchecked"
+                    disabled: true
+                }
+                
+                Lsd.LsdCheckbox {
+                    text: "Disabled checked"
+                    checked: true
+                    disabled: true
                 }
             }
         }

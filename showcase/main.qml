@@ -362,8 +362,8 @@ ApplicationWindow {
                             case "iconbutton": return "IconButtonDemo.qml"
                             case "buttongroup": return "ButtonGroupDemo.qml"
                             case "iconbuttongroup": return "IconButtonDemo.qml"
-                            case "checkboxgroup": return "FormsDemo.qml"
-                            case "radiobuttongroup": return "FormsDemo.qml"
+                            case "checkboxgroup": return "CheckboxGroupDemo.qml"
+                            case "radiobuttongroup": return "RadioButtonGroupDemo.qml"
                             
                             // Design Tokens
                             case "colors": return "ColorsDemo.qml"
