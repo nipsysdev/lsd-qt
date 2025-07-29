@@ -7,12 +7,12 @@ Column {
     spacing: Theme.LsdTheme.spacing[3] // 24px
     
     Lsd.LsdText {
-        text: "Date Picker"
+        text: "Date Range Picker"
         variant: "h2"
     }
     
     Lsd.LsdText {
-        text: "Input field for selecting dates with calendar popup"
+        text: "Input field for selecting date ranges with calendar popup"
         variant: "body2"
         colorVariant: "tertiary"
     }
@@ -30,11 +30,11 @@ Column {
                 variant: "h3"
             }
             
-            Lsd.LsdDatePicker {
-                label: "Select Date"
-                placeholderText: "Choose a date..."
-                onDateChanged: function(date) {
-                    console.log("Date selected:", date)
+            Lsd.LsdDateRangePicker {
+                label: "Select Date Range"
+                placeholderText: "Choose start and end dates..."
+                onDateRangeChanged: function(start, end) {
+                    console.log("Date range selected:", start, "to", end)
                 }
             }
         }
@@ -51,16 +51,16 @@ Column {
             Row {
                 spacing: Theme.LsdTheme.spacing[4] // 32px
                 
-                Lsd.LsdDatePicker {
+                Lsd.LsdDateRangePicker {
                     label: "Outlined (default)"
                     variant: "outlined"
-                    placeholderText: "Select date..."
+                    placeholderText: "Select date range..."
                 }
                 
-                Lsd.LsdDatePicker {
+                Lsd.LsdDateRangePicker {
                     label: "Underlined"
                     variant: "underlined"
-                    placeholderText: "Select date..."
+                    placeholderText: "Select date range..."
                 }
             }
         }
@@ -77,22 +77,22 @@ Column {
             Row {
                 spacing: Theme.LsdTheme.spacing[4] // 32px
                 
-                Lsd.LsdDatePicker {
+                Lsd.LsdDateRangePicker {
                     label: "Small"
                     size: "small"
-                    placeholderText: "Select date..."
+                    placeholderText: "Select range..."
                 }
                 
-                Lsd.LsdDatePicker {
+                Lsd.LsdDateRangePicker {
                     label: "Medium (default)"
                     size: "medium"
-                    placeholderText: "Select date..."
+                    placeholderText: "Select range..."
                 }
                 
-                Lsd.LsdDatePicker {
+                Lsd.LsdDateRangePicker {
                     label: "Large"
                     size: "large"
-                    placeholderText: "Select date..."
+                    placeholderText: "Select range..."
                 }
             }
         }
@@ -106,9 +106,9 @@ Column {
                 variant: "h3"
             }
             
-            Lsd.LsdDatePicker {
-                label: "Disabled Date Picker"
-                placeholderText: "Cannot select date"
+            Lsd.LsdDateRangePicker {
+                label: "Disabled Date Range Picker"
+                placeholderText: "Cannot select range"
                 disabled: true
             }
         }

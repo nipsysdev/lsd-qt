@@ -12,21 +12,21 @@ Column {
     }
     
     Lsd.LsdText {
-        text: "Single selection controls for mutually exclusive options"
+        text: "Single-choice selection controls"
         variant: "body2"
         colorVariant: "tertiary"
     }
     
     Column {
         width: parent.width
-        spacing: Theme.LsdTheme.spacing[3] // 24px
+        spacing: Theme.LsdTheme.spacing[4] // 32px
         
-        // Basic radio buttons
+        // Basic usage
         Column {
             spacing: Theme.LsdTheme.spacing[2] // 16px
             
             Lsd.LsdText {
-                text: "Basic"
+                text: "Basic Usage"
                 variant: "h3"
             }
             
@@ -35,94 +35,109 @@ Column {
                 
                 Lsd.LsdRadioButton {
                     text: "Option 1"
-                    group: "demo1"
+                    value: "opt1"
+                    name: "basic"
                     checked: true
-                    onToggled: console.log("Option 1 selected:", checked)
+                    onSelected: function(value) {
+                        console.log("Selected:", value)
+                    }
                 }
                 
                 Lsd.LsdRadioButton {
                     text: "Option 2"
-                    group: "demo1"
-                    onToggled: console.log("Option 2 selected:", checked)
+                    value: "opt2"
+                    name: "basic"
+                    onSelected: function(value) {
+                        console.log("Selected:", value)
+                    }
                 }
                 
                 Lsd.LsdRadioButton {
                     text: "Option 3"
-                    group: "demo1"
-                    onToggled: console.log("Option 3 selected:", checked)
+                    value: "opt3"
+                    name: "basic"
+                    onSelected: function(value) {
+                        console.log("Selected:", value)
+                    }
                 }
             }
         }
         
-        // Radio button sizes
+        // Size variants
         Column {
             spacing: Theme.LsdTheme.spacing[2] // 16px
             
             Lsd.LsdText {
-                text: "Sizes"
+                text: "Size Variants"
                 variant: "h3"
             }
             
-            Row {
-                spacing: Theme.LsdTheme.spacing[4] // 32px
+            Column {
+                spacing: Theme.LsdTheme.spacing[2] // 16px
                 
-                Column {
+                Row {
                     spacing: Theme.LsdTheme.spacing[1] // 8px
                     
                     Lsd.LsdText {
-                        text: "Small"
+                        text: "Small:"
                         variant: "body3"
                         colorVariant: "tertiary"
+                        anchors.verticalCenter: parent.verticalCenter
                     }
                     
                     Lsd.LsdRadioButton {
-                        text: "Small option"
+                        text: "Small radio"
                         size: "small"
-                        group: "sizeDemo"
+                        value: "small"
+                        name: "sizes"
                         checked: true
                     }
                 }
                 
-                Column {
+                Row {
                     spacing: Theme.LsdTheme.spacing[1] // 8px
                     
                     Lsd.LsdText {
-                        text: "Medium"
+                        text: "Medium:"
                         variant: "body3"
                         colorVariant: "tertiary"
+                        anchors.verticalCenter: parent.verticalCenter
                     }
                     
                     Lsd.LsdRadioButton {
-                        text: "Medium option"
+                        text: "Medium radio"
                         size: "medium"
-                        group: "sizeDemo2"
+                        value: "medium"
+                        name: "sizes"
                     }
                 }
                 
-                Column {
+                Row {
                     spacing: Theme.LsdTheme.spacing[1] // 8px
                     
                     Lsd.LsdText {
-                        text: "Large"
+                        text: "Large:"
                         variant: "body3"
                         colorVariant: "tertiary"
+                        anchors.verticalCenter: parent.verticalCenter
                     }
                     
                     Lsd.LsdRadioButton {
-                        text: "Large option"
+                        text: "Large radio (default)"
                         size: "large"
-                        group: "sizeDemo3"
+                        value: "large"
+                        name: "sizes"
                     }
                 }
             }
         }
         
-        // Disabled states
+        // With disabled state
         Column {
             spacing: Theme.LsdTheme.spacing[2] // 16px
             
             Lsd.LsdText {
-                text: "Disabled States"
+                text: "Disabled State"
                 variant: "h3"
             }
             
@@ -130,67 +145,24 @@ Column {
                 spacing: Theme.LsdTheme.spacing[1] // 8px
                 
                 Lsd.LsdRadioButton {
-                    text: "Disabled unchecked"
-                    disabled: true
-                    group: "disabled"
+                    text: "Available option"
+                    value: "available"
+                    name: "disabled"
+                    checked: true
                 }
                 
                 Lsd.LsdRadioButton {
-                    text: "Disabled checked"
+                    text: "Disabled option"
+                    value: "disabled"
+                    name: "disabled"
                     disabled: true
-                    checked: true
-                    group: "disabled"
                 }
-            }
-        }
-        
-        // Form example
-        Column {
-            spacing: Theme.LsdTheme.spacing[2] // 16px
-            
-            Lsd.LsdText {
-                text: "Survey Example"
-                variant: "h3"
-            }
-            
-            Lsd.LsdCard {
-                width: 400
-                height: 240
                 
-                Column {
-                    spacing: Theme.LsdTheme.spacing[2] // 16px
-                    width: parent.width
-                    
-                    Lsd.LsdText {
-                        text: "How did you hear about us?"
-                        variant: "body1"
-                    }
-                    
-                    Lsd.LsdRadioButton {
-                        text: "Search engine"
-                        group: "survey"
-                    }
-                    
-                    Lsd.LsdRadioButton {
-                        text: "Social media"
-                        group: "survey"
-                        checked: true
-                    }
-                    
-                    Lsd.LsdRadioButton {
-                        text: "Friend recommendation"
-                        group: "survey"
-                    }
-                    
-                    Lsd.LsdRadioButton {
-                        text: "Advertisement"
-                        group: "survey"
-                    }
-                    
-                    Lsd.LsdRadioButton {
-                        text: "Other"
-                        group: "survey"
-                    }
+                Lsd.LsdRadioButton {
+                    text: "Another disabled option"
+                    value: "disabled2"
+                    name: "disabled"
+                    disabled: true
                 }
             }
         }

@@ -344,7 +344,7 @@ ApplicationWindow {
                             // Date Components
                             case "calendar": return "CalendarDemo.qml"
                             case "datepicker": return "DatePickerDemo.qml"
-                            case "daterangepicker": return "DatePickerDemo.qml" // Same demo covers both
+                            case "daterangepicker": return "DateRangePickerDemo.qml"
                             
                             // Layout Components
                             case "card": return "CardDemo.qml"
@@ -361,7 +361,7 @@ ApplicationWindow {
                             // Advanced Components
                             case "iconbutton": return "IconButtonDemo.qml"
                             case "buttongroup": return "ButtonGroupDemo.qml"
-                            case "iconbuttongroup": return "IconButtonDemo.qml"
+                            case "iconbuttongroup": return "IconButtonGroupDemo.qml"
                             case "checkboxgroup": return "CheckboxGroupDemo.qml"
                             case "radiobuttongroup": return "RadioButtonGroupDemo.qml"
                             

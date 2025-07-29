@@ -19,9 +19,9 @@ Column {
     
     Column {
         width: parent.width
-        spacing: Theme.LsdTheme.spacing[3] // 24px
+        spacing: Theme.LsdTheme.spacing[4] // 32px
         
-        // Basic dropdowns
+        // Basic usage
         Column {
             spacing: Theme.LsdTheme.spacing[2] // 16px
             
@@ -65,48 +65,28 @@ Column {
             Row {
                 spacing: Theme.LsdTheme.spacing[4] // 32px
                 
-                Column {
-                    spacing: Theme.LsdTheme.spacing[1] // 8px
-                    
-                    Lsd.LsdText {
-                        text: "Outlined (default)"
-                        variant: "body3"
-                        colorVariant: "tertiary"
-                    }
-                    
-                    Lsd.LsdDropdown {
-                        width: 180
-                        label: "Country"
-                        variant: "outlined"
-                        model: ["United States", "Canada", "United Kingdom", "Germany", "France"]
-                    }
+                Lsd.LsdDropdown {
+                    width: 180
+                    label: "Outlined (default)"
+                    variant: "outlined"
+                    model: ["United States", "Canada", "United Kingdom", "Germany"]
                 }
                 
-                Column {
-                    spacing: Theme.LsdTheme.spacing[1] // 8px
-                    
-                    Lsd.LsdText {
-                        text: "Underlined"
-                        variant: "body3"
-                        colorVariant: "tertiary"
-                    }
-                    
-                    Lsd.LsdDropdown {
-                        width: 180
-                        label: "Language"
-                        variant: "underlined"
-                        model: ["English", "Spanish", "French", "German", "Italian"]
-                    }
+                Lsd.LsdDropdown {
+                    width: 180
+                    label: "Underlined"
+                    variant: "underlined"
+                    model: ["English", "Spanish", "French", "German"]
                 }
             }
         }
         
-        // Sizes
+        // Size variants
         Column {
             spacing: Theme.LsdTheme.spacing[2] // 16px
             
             Lsd.LsdText {
-                text: "Sizes"
+                text: "Size Variants"
                 variant: "h3"
             }
             
@@ -129,7 +109,7 @@ Column {
                 
                 Lsd.LsdDropdown {
                     width: 150
-                    label: "Large"
+                    label: "Large (default)"
                     size: "large"
                     model: ["Option A", "Option B", "Option C"]
                 }
@@ -160,65 +140,6 @@ Column {
                     label: "Disabled"
                     disabled: true
                     model: ["Option 1", "Option 2", "Option 3"]
-                }
-            }
-        }
-        
-        // Form example
-        Column {
-            spacing: Theme.LsdTheme.spacing[2] // 16px
-            
-            Lsd.LsdText {
-                text: "Profile Form"
-                variant: "h3"
-            }
-            
-            Lsd.LsdCard {
-                width: 500
-                height: 280
-                
-                Column {
-                    spacing: Theme.LsdTheme.spacing[2] // 16px
-                    width: parent.width
-                    
-                    Lsd.LsdText {
-                        text: "Personal Information"
-                        variant: "body1"
-                    }
-                    
-                    Row {
-                        spacing: Theme.LsdTheme.spacing[2] // 16px
-                        width: parent.width
-                        
-                        Lsd.LsdDropdown {
-                            width: 120
-                            label: "Title"
-                            model: ["Mr.", "Ms.", "Dr.", "Prof."]
-                        }
-                        
-                        Lsd.LsdDropdown {
-                            width: 200
-                            label: "Country"
-                            model: ["United States", "Canada", "United Kingdom", "Australia", "Germany", "France"]
-                        }
-                    }
-                    
-                    Row {
-                        spacing: Theme.LsdTheme.spacing[2] // 16px
-                        width: parent.width
-                        
-                        Lsd.LsdDropdown {
-                            width: 150
-                            label: "Industry"
-                            model: ["Technology", "Healthcare", "Finance", "Education", "Manufacturing", "Other"]
-                        }
-                        
-                        Lsd.LsdDropdown {
-                            width: 150
-                            label: "Experience"
-                            model: ["0-1 years", "2-5 years", "6-10 years", "10+ years"]
-                        }
-                    }
                 }
             }
         }
